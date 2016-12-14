@@ -1,0 +1,39 @@
+{
+    "coord": {
+        "lon": 47.18,
+        "lat": 3.85
+    },
+    "weather": [{
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01d"
+    }],
+    "base": "stations",
+    "main": {
+        "temp": 300.512,
+        "pressure": 1023.3,
+        "humidity": 95,
+        "temp_min": 300.512,
+        "temp_max": 300.512,
+        "sea_level": 1025.16,
+        "grnd_level": 1023.3
+    },
+    "wind": {
+        "speed": 9.05,
+        "deg": 61.5012
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1481638011,
+    "sys": {
+        "message": 0.0035,
+        "country": "SO",
+        "sunrise": 1481597325,
+        "sunset": 1481640182
+    },
+    "id": 62788,
+    "name": "Ceeldheer",
+    "cod": 200
+}
