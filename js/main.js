@@ -13,8 +13,8 @@ $(document).ready(function() {
     };
 
     // Assign values
-    geoData.longitude = locationArr[0];
-    geoData.lattitude = locationArr[1];
+    geoData.longitude = locationArr[1];
+    geoData.lattitude = locationArr[0];
     geoData.city = data.city;
     geoData.country = data.country;
 
@@ -28,21 +28,25 @@ $(document).ready(function() {
     // import data
     // Get whether from openweathermap
     getWhether(function (data) {
-      var weatherData = {
-        description: "",
-        icon: ""
-      };
+      var weatherData = {};
 
       weatherData.description = data.weather[0].description;
       weatherData.icon = data.weather[0].icon;
       weatherData.id = data.weather[0].id;
+      weatherData.kelvin = data.main.temp; // by Kelvin, need to change into C or F.
+      weatherData.celcius =  (weatherData.kelvin - 273.15).toFixed(0);
+      weatherData.fahrenheit = ((weatherData.kelvin - 273.15) * 9 / 5 + 32).toFixed(0);
 
       console.log("weatherData.description: " + weatherData.description);
       console.log("weatherData.icon: " + weatherData.icon);
       console.log("weatherData.id: " + weatherData.id);
+      console.log("weatherData.temp: " + weatherData.kelvin + " Kevin"); // by Kelvin, need to change into C or F.
+      console.log("weatherData.celcius: " + weatherData.celcius + " \xB0C");
+      console.log("weatherData.fahrenheit: " + weatherData.fahrenheit + " \xB0F");
+
 
       // function
-      // change background-color following day or night.
+      // display background-color following day or night.
       if (weatherData.icon.indexOf('d') === 2) {
         $("html body").css("background-color", "#07A88C");
         console.log("background-color is changed for day!");
@@ -52,18 +56,23 @@ $(document).ready(function() {
       }
 
       // function: icon
-      // change icon following current weather.
+      // display icon following current weather.
       var currentIcon = "wi-owm-";
       currentIcon += weatherData.id;
       console.log("currentIcon: " + currentIcon);
       $("#currentIcon").addClass(currentIcon);
 
       // function: temperature 1
-      // change temperature
-      
+      // display temperature
+      $("#currentTemp").html(weatherData.celcius  + " \xB0C");
+
 
       // function: temperature 2
       // change temperature between celcius and fahrenheit
+
+
+
+
 
 
 
@@ -74,6 +83,7 @@ $(document).ready(function() {
     function getWhether(callback) {
       // Build url for openweathermap
       var requestUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + geoData.lattitude + "&lon=" + geoData.longitude + "&appid=82b6bdbc4425d3443093fa5f8557ba0f";
+      console.log("requestUrl: " + requestUrl);
 
       $.getJSON(requestUrl, function(data) {
         callback(data);

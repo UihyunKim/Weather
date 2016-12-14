@@ -2,9 +2,13 @@
   background color for night: #0A2532
 */
 
-/*html body {
-  background-color: #07A88C;
-}*/
+html body {
+  color: white;
+}
+
+#bootstrap-overrides .row {
+  margin: 5px 0;
+}
 
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
@@ -16,5 +20,8 @@
 
 .wi {
   font-size: 10em;
-  color: white;
+}
+
+.temperature {
+  font-size: 3em;
 }

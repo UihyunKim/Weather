@@ -1,7 +1,7 @@
 {
     "coord": {
-        "lon": 47.18,
-        "lat": 3.85
+        "lon": 2.34,
+        "lat": 48.86
     },
     "weather": [{
         "id": 800,
@@ -11,29 +11,29 @@
     }],
     "base": "stations",
     "main": {
-        "temp": 300.512,
-        "pressure": 1023.3,
-        "humidity": 95,
-        "temp_min": 300.512,
-        "temp_max": 300.512,
-        "sea_level": 1025.16,
-        "grnd_level": 1023.3
+        "temp": 280.14,
+        "pressure": 1022,
+        "humidity": 65,
+        "temp_min": 279.15,
+        "temp_max": 281.15
     },
+    "visibility": 10000,
     "wind": {
-        "speed": 9.05,
-        "deg": 61.5012
+        "speed": 1.5
     },
     "clouds": {
         "all": 0
     },
-    "dt": 1481638011,
+    "dt": 1481711400,
     "sys": {
-        "message": 0.0035,
-        "country": "SO",
-        "sunrise": 1481597325,
-        "sunset": 1481640182
+        "type": 1,
+        "id": 5610,
+        "message": 0.0028,
+        "country": "FR",
+        "sunrise": 1481701036,
+        "sunset": 1481730845
     },
-    "id": 62788,
-    "name": "Ceeldheer",
+    "id": 6269531,
+    "name": "Paris 01 Louvre",
     "cod": 200
 }
