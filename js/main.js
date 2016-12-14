@@ -55,6 +55,7 @@ $(document).ready(function() {
         console.log("background-color is changed for night!");
       }
 
+
       // function: icon
       // display icon following current weather.
       var currentIcon = "wi-owm-";
@@ -62,17 +63,31 @@ $(document).ready(function() {
       console.log("currentIcon: " + currentIcon);
       $("#currentIcon").addClass(currentIcon);
 
+
       // function: temperature 1
       // display temperature
-      $("#currentTemp").html(weatherData.celcius  + " \xB0C");
-
+      $("#currentTemp").html("<h2>" + weatherData.celcius  + "<span id='celcius'> \xB0C</span></h2>");
 
       // function: temperature 2
       // change temperature between celcius and fahrenheit
+      $("#currentTemp").click(function () {
+        if ($("#celcius").html().indexOf("F") === 2) {
+          $("#currentTemp").html("<h2>" + weatherData.celcius  + "<span id='celcius'> \xB0C</span></h2>");
+          console.log("Changed into celcius");
+        } else if ($("#celcius").html().indexOf("C") === 2) {
+          $("#currentTemp").html("<h2>" + weatherData.fahrenheit + "<span id='celcius'> \xB0F</span></h2>");
+          console.log("Changed into fahrenheit");
+        }
+      });
 
 
+      // function
+      // display description
+      $("#currentDescription").html("<h3>" + weatherData.description + "</h3");
 
-
+      // function
+      // display region
+      $("#region").html("<h3>" + geoData.city + "</h3>");
 
 
 
