@@ -25,6 +25,7 @@ $(document).ready(function() {
     console.log("geoData.country: " + geoData.country);
 
 
+    // import data
     // Get whether from openweathermap
     getWhether(function (data) {
       var weatherData = {
@@ -40,6 +41,33 @@ $(document).ready(function() {
       console.log("weatherData.icon: " + weatherData.icon);
       console.log("weatherData.id: " + weatherData.id);
 
+      // function
+      // change background-color following day or night.
+      if (weatherData.icon.indexOf('d') === 2) {
+        $("html body").css("background-color", "#07A88C");
+        console.log("background-color is changed for day!");
+      } else {
+        $("html body").css("background-color", "#0A2532");
+        console.log("background-color is changed for night!");
+      }
+
+      // function: icon
+      // change icon following current weather.
+      var currentIcon = "wi-owm-";
+      currentIcon += weatherData.id;
+      console.log("currentIcon: " + currentIcon);
+      $("#currentIcon").addClass(currentIcon);
+
+      // function: temperature 1
+      // change temperature
+      
+
+      // function: temperature 2
+      // change temperature between celcius and fahrenheit
+
+
+
+
 
     });
 
@@ -51,8 +79,6 @@ $(document).ready(function() {
         callback(data);
       });
     }
-
-
   });
 
 

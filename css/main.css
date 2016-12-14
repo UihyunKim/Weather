@@ -2,10 +2,19 @@
   background color for night: #0A2532
 */
 
+/*html body {
+  background-color: #07A88C;
+}*/
+
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
 
   display: flex;
   align-items: center;
+}
+
+.wi {
+  font-size: 10em;
+  color: white;
 }
