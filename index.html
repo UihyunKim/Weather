@@ -2,52 +2,62 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
 
-  <!-- import sources -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://use.fontawesome.com/1a92bb96eb.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <!-- import sources -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://use.fontawesome.com/1a92bb96eb.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 
-  <!-- title -->
-  <title>Show the local weather</title>
+    <!-- title -->
+    <title>Show the local weather</title>
 </head>
 
 <body id="bootstrap-overrides" class="vertical-center">
-  <div class="container text-center">
-    <div class="row icon">
-      <div class="col-xs-12">
-        <i id="currentIcon" class="wi"></i>
-      </div>
+    <div class="container text-center">
+        <div class="row icon">
+            <div class="col-xs-12">
+                <!-- old codes for wi icons with open weather id number -->
+                <!-- <i id="currentIcon" class="wi"></i> -->
+                <canvas id="currentIcon" width="100" height="100"> </canvas>
+            </div>
+        </div>
+        <div class="row temperature">
+            <div id="currentTemp" class="col-xs-12 celcius">
+                temperature
+            </div>
+        </div>
+        <div class="row description">
+            <div id="currentDescription" class="col-xs-12">
+                description
+            </div>
+        </div>
+        <div class="row region">
+            <div id="region" class="col-xs-12">
+                region
+            </div>
+        </div>
     </div>
-    <div class="row temperature">
-      <div id="currentTemp" class="col-xs-12 celcius">
-        temperature
-      </div>
-    </div>
-    <div class="row description">
-      <div id="currentDescription" class="col-xs-12">
-        description
-      </div>
-    </div>
-    <div class="row region">
-      <div id="region" class="col-xs-12">
-        region
-      </div>
-    </div>
-  </div>
 
 
 
-  <!-- import scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+    <!-- import scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- icons from skycons which is fit with darksky api -->
+    <script src="js/skycons.js"></script>
+
+    <!-- api from openweather, currently it doesn't work on codepen because of http issue -->
+    <!-- <script src="js/main-openweather.js"></script>  -->
+
+    <!-- api from dark sky, currently, it does work in codepen because it provides https -->
+    <script src="js/main-darksky.js"></script>
+
 </body>
 
 </html>
